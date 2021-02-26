@@ -1,7 +1,7 @@
 .countdownContainer {
   display: flex;
   align-items: center;
-  font-family: Rajdhani;
+  font-family: Rajdhani, sans-serif;
   font-weight: 600;
   color: var(--title);
 }
@@ -59,16 +59,24 @@
   transition: 0.2s;
 }
 
-.countdownButton:hover {
+.countdownButton:not(:disabled):hover {
   background: var(--blue-dark);;
 }
 
-.countdowbButtonActive {
+.countdownButtonActive {
   background: var(--white);
   color: var(--title);
+  border: 2px solid var(--red);
 }
 
-.countdowbButtonActive:hover {
+.countdownButtonActive:not(:disabled):hover {
   background: var(--red);
   color: var(--white);
+}
+
+.countdownButton:disabled {
+  background: var(--white);
+  color: var(--text);
+  cursor: not-allowed;
+  border: 2px solid var(--red);
 }
